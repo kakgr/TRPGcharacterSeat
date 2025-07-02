@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>キャラ作成ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>キャラクター作成</h1>
+
+    <!-- キャラプロフィール -->
+  <div class="profile-section">
+    <h2>キャラクタープロフィール</h2>
+    <label>名前: <input type="text" id="charName" placeholder="例: 白井 ユウ"></label>
+    <label>性別: <input type="text" id="charGender" placeholder="例: 女性"></label>
+    <label>年齢: <input type="text" id="charAge" placeholder="例: 17"></label>
+    <label>職業: <input type="text" id="charJob" placeholder="例: 霊媒師"></label>
+    <label>身長: <input type="text" id="charHeight" placeholder="例: 158cm"></label>
+    <label>体重: <input type="text" id="charWeight" placeholder="例: 48kg"></label>
+    
+    <div id="customStats"></div>
+    <button onclick="addCustomStat()">＋ステータスを追加</button>
+  </div>
+
+  <!-- 基本能力（横並び） -->
+  <div class="ability-row">
+    <label>体力: <input type="number" name="stat" min="0" max="100"></label>
+    <label>知力: <input type="number" name="stat" min="0" max="100"></label>
+    <label>敏捷: <input type="number" name="stat" min="0" max="100"></label>
+    <label>魅力: <input type="number" name="stat" min="0" max="100"></label>
+    <label>運: <input type="number" name="stat" min="0" max="100"></label>
+    <label>運: <input type="number" name="stat" min="0" max="100"></label>
+  </div>
+
+  <hr>
+
+  <!-- 自由入力系（縦列） -->
+    <!-- 技能セクション -->
+    <div class="custom-section">
+    <h2>技能</h2>
+    <div id="skills"></div>
+    <button onclick="addNameAndDescription('skills')">＋技能を追加</button>
+    </div>
+
+    <!-- 持ち物セクション -->
+    <div class="custom-section">
+    <h2>持ち物</h2>
+    <div id="items"></div>
+    <button onclick="addNameAndDescription('items')">＋持ち物を追加</button>
+    </div>
+
+  <div class="custom-section">
+    <h2>キャラのストーリー</h2>
+    <div id="story"></div>
+    <button onclick="addTextarea('story')">＋ストーリーを追加</button>
+  </div>
+
+  <button onclick="saveData()">💾 保存</button>
+  <button onclick="loadData()">📂 読み込み</button>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
